@@ -25,6 +25,7 @@ IoU的全称是交并比(Intersection over Union)，是目标检测任务中使�
     <a align="center"><img src=images/iou-1.png width="40%" /></a>  
 </div>
 
+![image](https://github.com/SunJianboGitHub/Iou-evolution/blob/main/images/iou-1.png)
 
 
 
