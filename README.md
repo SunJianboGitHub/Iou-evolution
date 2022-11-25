@@ -20,10 +20,10 @@
 ## <div align="center">IoU的提出🚀</div>
 
 IoU的全称是交并比(Intersection over Union)，是目标检测任务中使用的一个概念。IoU计算的是预测边界框与真实标注框的交叠率，也就是它们交集和并集的比值。最理想的情况是两个边界框完全重合，即IoU的值为1。
-222
+
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SunJianboGitHub/Iou-evolution/main/images/iou-1.png" width=40%>
+    <img src="./images/iou-1.png" width=40%>
 </div>
 
 
@@ -36,7 +36,7 @@ $$IoU = \frac{A \cap B}{A \cup B}$$
 虽然IoU Loss解决了Smooth L1系列变量相互独立和不具有尺度不变性的两大问题，但是IoU它本身也存在问题：
 
 <div align="center">
-    <a align="center"><img src=images/iou-2.png width="40%" /></a>  
+    <a align="center"><img src=./images/iou-2.png width="40%" /></a>  
 </div>
 
 
@@ -54,10 +54,10 @@ $$IoU = \frac{A \cap B}{A \cup B}$$
 针对IoU无法反映两个框是如何相交的(不相交或者怎么相交)，GIoU通过引入预测框和标注框的最小外接矩形来获取预测框和标注框在闭包区域中的比重。因此，GIoU不仅可以关注重叠区域，还可以关注其它非重叠区域，能较好地反映两个框在闭包区域中的相交情况。
 
 <div align="center">
-    <a align="center"><img src=images/giou-1.png width="40%" /></a>  
+    <a align="center"><img src=./images/giou-1.png width="40%" /></a>  
 </div>
 <div align="center">
-    <a align="center"><img src=images/giou-2.png width="40%" /></a>  
+    <a align="center"><img src=./images/giou-2.png width="40%" /></a>  
 </div>
 
 根据公式来看，GIoU的取值范围是(-1,1]。在两个框完全重合时取最大值1，在两个框没有交集时且无限远时，无限接近于最小值-1。因此，与IoU相比，GIoU是一个比较好的距离度量指标。
