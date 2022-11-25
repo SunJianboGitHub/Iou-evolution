@@ -5,8 +5,6 @@
 3. 各种IoU的改进🌟
 4. 代码实现🌟
 
-[image_dir]: https://github.com/SunJianboGitHub/Iou-evolution/raw/main/images/
-
 ## <div align="center">IoU提出之前🚀</div>
 
 目标检测任务的损失函数一般是由分类损失和回归损失组成。在IoU提出之前，我们针对候选框的回归通常采用坐标的回归损失，回归损失包括L1 Loss和L2 Loss两种，但是两者都存在一定的问题：
@@ -24,7 +22,7 @@
 IoU的全称是交并比(Intersection over Union)，是目标检测任务中使用的一个概念。IoU计算的是预测边界框与真实标注框的交叠率，也就是它们交集和并集的比值。最理想的情况是两个边界框完全重合，即IoU的值为1。
 
 <div align="center">
-    <a align="center"><img src=[image_dir]iou-1.png width="40%" /></a>  
+    <a align="center"><img src=https://github.com/SunJianboGitHub/Iou-evolution/raw/main/images/iou-1.png width="40%" /></a>  
 </div>
 
 $$IoU = \frac{A \cap B}{A \cup B}$$
@@ -35,8 +33,9 @@ $$IoU = \frac{A \cap B}{A \cup B}$$
 虽然IoU Loss解决了Smooth L1系列变量相互独立和不具有尺度不变性的两大问题，但是IoU它本身也存在问题：
 
 <div align="center">
-    <a align="center"><img src=./images/iou-2.png width="40%" /></a>  
+    <a align="center"><img src=https://github.com/SunJianboGitHub/Iou-evolution/raw/main/images/iou-2.png width="40%" /></a>  
 </div>
+
 
 - 1. 当预测框和标注框没有交集时，即IoU(A,B)=0，不能反应A、B距离的远近，此时损失函数不可导，IoU Loss无法优化两个框不相交的情况。换句话说，IoU Loss 仅在边界框重叠时起作用，并且在非重叠情况下不会提供任何移动梯度。
 - 2. 如上图所示，假设预测框和标注框的大小是确定的，当两个框的相交值是确定的，即IoU值相同时，IoU值不能反映两个框是如何相交的，那么损失函数也就无法确定进一步的优化方向。(只是知道要降低IoU，但是不知道如何优化，只能慢慢搜索)。
