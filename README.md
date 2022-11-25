@@ -22,7 +22,7 @@
 IoU的全称是交并比(Intersection over Union)，是目标检测任务中使用的一个概念。IoU计算的是预测边界框与真实标注框的交叠率，也就是它们交集和并集的比值。最理想的情况是两个边界框完全重合，即IoU的值为1。
 
 <div align="center">
-    <a align="center"><img src=https://github.com/SunJianboGitHub/Iou-evolution/raw/main/images/iou-1.png width="40%" /></a>  
+    <a align="center"><img src=images/iou-1.png width="40%" /></a>  
 </div>
 
 $$IoU = \frac{A \cap B}{A \cup B}$$
@@ -33,7 +33,7 @@ $$IoU = \frac{A \cap B}{A \cup B}$$
 虽然IoU Loss解决了Smooth L1系列变量相互独立和不具有尺度不变性的两大问题，但是IoU它本身也存在问题：
 
 <div align="center">
-    <a align="center"><img src=https://github.com/SunJianboGitHub/Iou-evolution/raw/main/images/iou-2.png width="40%" /></a>  
+    <a align="center"><img src=./images/iou-2.png width="40%" /></a>  
 </div>
 
 
